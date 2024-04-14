@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -16,11 +18,11 @@ public class Emprunt {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity= Utilisateur.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity= Utilisateur.class)
     private Utilisateur utilisateur;
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity= Livre.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity= Livre.class)
     private Livre livre;
     private Boolean rendu;
-
+    private LocalDate dateEmprunt;
 
 }

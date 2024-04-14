@@ -18,10 +18,14 @@ public class Utilisateur {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
     private String firstName;
     private String lastName;
     private String email;
+
+    private String username;
     private String password;
     private String role;
-    private Boolean enRegle;
+
+    private Boolean enRegle = true;
 }
